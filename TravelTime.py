@@ -1,3 +1,22 @@
+#!/usr/bin/env python
+#
+# Copyright (C) 2016-2017 Roel Baardman
+#
+# This file is part of findmynewhome.
+# Findmynewhome is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# Findmynewhome is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with findmynewhome.  If not, see <http://www.gnu.org/licenses/>.
+
+
 import GoogleMaps
 import datetime
 import time
@@ -47,7 +66,7 @@ time.sleep(10)
 for month in range(min_month, max_month):
 	for day in range(min_day,max_day):
 		for hour in range(start_hour,end_hour):
-			for minute in range(0, 60, interval_minutes):
+			for minute in range(min_minute, max_minute, interval_minutes):
 				query_random = random.random()
 				perform_query = (query_random >= query_chance)
 				try:
